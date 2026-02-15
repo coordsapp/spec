@@ -21,3 +21,4 @@ System feature index:
 - [Feature 17 - Health Check Endpoint](./feature-17-health-check.md)
 - [Feature 18 - OpenAPI Contracts](./feature-18-openapi-contracts.md)
 - [Feature 19 - Custom Domain Support](./feature-19-custom-domain-support.md)
+- [Feature 20 - SLA Monitoring and Public Status](./feature-20-sla-monitoring-status.md)
