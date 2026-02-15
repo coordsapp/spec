@@ -1,7 +1,7 @@
 # Phase 3 - Alias Claiming and Verified Ownership
 
 ## Status
-In progress (API + schema + auth foundation implemented)
+Completed (live and verified)
 
 ## Objective
 Allow organizations to claim and verify aliases (for example `@acme/warehouse1`) with anti-squatting controls and org ownership.
@@ -22,7 +22,7 @@ Allow organizations to claim and verify aliases (for example `@acme/warehouse1`)
 Phase 3 contract is documented in:
 - `openapi/v1-phase3.yaml`
 
-## Implemented Foundation
+## Delivered
 - JWT issuance and validation (`/v1/auth/signup`, `/v1/auth/token`)
 - RBAC middleware (`admin`, `member`, `viewer`)
 - Org-scoped alias handlers:
@@ -33,6 +33,14 @@ Phase 3 contract is documented in:
   - `POST /v1/aliases/{id}/verify`
 - Quota checks at claim time (`aliases_used < aliases_quota`)
 - Geofenced verification radius checks and postal verification code validation
+- Ownership metadata in resolver responses (`claimed_by`, `verified_at`)
 
-## Outcome Target
-Verified, organization-scoped alias ownership that is publicly resolvable and auditable.
+## Live Validation
+- Org creation returns `201`
+- Alias claim returns `202`
+- Geofenced verification returns `200`
+- Resolver returns verified ownership metadata
+- Free-tier quota enforcement returns `409` on over-limit claims
+
+## Outcome
+Verified, organization-scoped alias ownership is publicly resolvable and enforceable in production.

@@ -1,0 +1,22 @@
+# Features
+
+System feature index:
+
+- [Feature 01 - Protocol v1 Specification](./feature-01-protocol-v1.md)
+- [Feature 02 - L1 URI and Checksum Format](./feature-02-l1-uri-checksum.md)
+- [Feature 03 - Offline CLI Encode/Decode](./feature-03-cli-offline-encode-decode.md)
+- [Feature 04 - Resolver API (Handle to L1)](./feature-04-resolver-api.md)
+- [Feature 05 - Altitude Override in Resolve](./feature-05-altitude-override.md)
+- [Feature 06 - Anonymous Rate Limiting](./feature-06-anonymous-rate-limiting.md)
+- [Feature 07 - Store Abstraction (Memory and Postgres)](./feature-07-store-abstraction.md)
+- [Feature 08 - PostgreSQL Schema and Seed Data](./feature-08-postgres-schema-seed.md)
+- [Feature 09 - Auto-Migration on Startup](./feature-09-auto-migration.md)
+- [Feature 10 - JWT Authentication](./feature-10-jwt-authentication.md)
+- [Feature 11 - RBAC and Org Scoping](./feature-11-rbac-org-scoping.md)
+- [Feature 12 - Alias Claim Lifecycle](./feature-12-alias-claim-lifecycle.md)
+- [Feature 13 - Verification Flows (Geofenced and Postal)](./feature-13-verification-flows.md)
+- [Feature 14 - Tier Quota Enforcement](./feature-14-tier-quota-enforcement.md)
+- [Feature 15 - Ownership Metadata in Resolver Responses](./feature-15-ownership-metadata.md)
+- [Feature 16 - Billing and Stripe Subscription Endpoints](./feature-16-billing-and-subscriptions.md)
+- [Feature 17 - Health Check Endpoint](./feature-17-health-check.md)
+- [Feature 18 - OpenAPI Contracts](./feature-18-openapi-contracts.md)
