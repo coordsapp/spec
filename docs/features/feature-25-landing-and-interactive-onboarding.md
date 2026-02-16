@@ -1,7 +1,7 @@
 # Feature 25 - Landing Experience and Interactive Onboarding
 
 ## Status
-Built (Week 2 in progress as of February 16, 2026)
+Completed (delivered February 16, 2026)
 
 ## What it does
 Adds a product-facing web experience on top of the resolver service:

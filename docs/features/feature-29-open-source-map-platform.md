@@ -1,7 +1,7 @@
 # Feature 29 - Open Source Map Platform
 
 ## Status
-Built (Phase 8 kickoff on February 16, 2026)
+Completed (delivered February 16, 2026)
 
 ## What it does
 Provides a coords-native map experience at `/map` with live viewport overlays and handle-first workflows.

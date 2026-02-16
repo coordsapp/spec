@@ -26,7 +26,7 @@ Enable end-to-end flow:
 - Batch conversion from JSON list or CSV payload
 - Converter usage analytics via onboarding events
 
-## Week 1 Implementation
+## Week 1 Delivered
 - Add converter domain service:
 1. coordinate validation (`lat`, `lng`, `alt`)
 2. L1 generation through resolver encoding

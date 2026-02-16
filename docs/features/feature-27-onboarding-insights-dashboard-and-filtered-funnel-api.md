@@ -1,7 +1,7 @@
 # Feature 27 - Onboarding Insights Dashboard and Filtered Funnel API
 
 ## Status
-Built (Week 4 in progress as of February 16, 2026)
+Completed (delivered February 16, 2026)
 
 ## What it does
 Turns onboarding analytics into an operational tool by adding live insights in `/app` and filter-aware funnel reporting APIs.
