@@ -26,3 +26,8 @@ System feature index:
 - [Feature 22 - Dock Management and Verification](./feature-22-dock-management-and-verification.md)
 - [Feature 23 - Carrier Access Tokens](./feature-23-carrier-access-tokens.md)
 - [Feature 24 - Live Dock Operations](./feature-24-live-dock-operations.md)
+- [Feature 25 - Landing Experience and Interactive Onboarding](./feature-25-landing-and-interactive-onboarding.md)
+- [Feature 26 - Onboarding Analytics and Funnel Tracking](./feature-26-onboarding-analytics-and-funnel-tracking.md)
+- [Feature 27 - Onboarding Insights Dashboard and Filtered Funnel API](./feature-27-onboarding-insights-dashboard-and-filtered-funnel-api.md)
+- [Feature 28 - Interactive Coordinate Converter](./feature-28-coordinate-converter.md)
+- [Feature 29 - Open Source Map Platform](./feature-29-open-source-map-platform.md)
