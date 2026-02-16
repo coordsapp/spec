@@ -1,7 +1,7 @@
 # Phase 5 - Warehouse and Dock Management
 
 ## Status
-Planned
+Completed (Verified on February 16, 2026)
 
 ## Objective
 Deliver a logistics-first workflow that makes Coords operationally central for warehouse teams and carrier networks.
@@ -39,21 +39,32 @@ Enable end-to-end flow:
 - `POST /v1/warehouses/{id}/operations/docks/{dock_id}/arrive`
 - `POST /v1/warehouses/{id}/operations/docks/{dock_id}/depart`
 
-## Execution Plan
-1. Week 1: warehouse/dock schema and warehouse CRUD
-2. Week 2: dock CRUD + geofenced dock verification
-3. Week 3: carrier access token flows
-4. Week 4: live operations dashboard APIs + workflow documentation
+## Delivered Scope
+- Warehouse CRUD with deterministic handle generation
+- Dock CRUD with nested dock handles (`@org/warehouse/dock`)
+- Dock verification endpoint with coordinate and accuracy capture
+- Carrier access token create/list/revoke workflows
+- Live dock operation lifecycle (`arrive` and `depart`)
+- Org-scoped RBAC checks for manage/view warehouse workflows
+- Tier and quota enforcement for business and enterprise plans
+- Migration-backed schema for `warehouses`, `docks`, `carrier_access`, and `dock_operations`
 
 ## Tier Packaging
 - `business`: up to 5 warehouses, 20 docks per warehouse, 10 carrier tokens
 - `enterprise`: unlimited warehouses/docks/tokens, advanced operations support
 
-## Success Metrics
-- 50+ warehouses created in first month
-- >90% dock verification success rate
-- 3+ carriers connected per active warehouse
-- 80% of onboarded warehouses using operations endpoints daily
+## Verification Snapshot
+- End-to-end flow verified in production on February 16, 2026
+- Verified sequence:
+  1. create warehouse
+  2. create dock
+  3. verify dock
+  4. issue carrier access
+  5. arrive and depart operation events
+- Example verified handles:
+  - `@phase5-e2e-1771215200/dallas-north-dc`
+  - `@phase5-e2e-1771215200/dallas-north-dc/inbound-dock-1`
+- Operations state transition verified: `arrived` -> `departed`
 
 ## Outcome Target
 Coords becomes a mission-critical logistics workflow platform, not just a resolver utility.

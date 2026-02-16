@@ -13,8 +13,11 @@ Enforces role-based permissions and organization boundaries for protected endpoi
 
 ## Key behavior
 - Permission checks at middleware layer
-- Org-scoped alias and billing operations
+- Org-scoped alias, billing, domain, SLA, and warehouse operations
 - Blocks unauthorized role actions by endpoint
+- Warehouse permissions added:
+  - `manage_warehouses`
+  - `view_warehouses`
 
 ## Where implemented
 - `cloud/internal/auth/rbac.go`

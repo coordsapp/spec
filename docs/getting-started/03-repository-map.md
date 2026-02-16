@@ -18,3 +18,10 @@ Hosted API and platform services:
 - Auth, orgs, RBAC
 - Alias claiming and verification
 - Billing, domains, SLA/status
+- Warehouse workflows (`/v1/warehouses/...`)
+- Dock verification and operations (`/v1/warehouses/{id}/operations/...`)
+
+Key Phase 5 implementation paths:
+- `cloud/internal/warehouse/service.go`
+- `cloud/handlers/warehouses/`
+- `cloud/storage/schema_phase5_warehouse.sql`
