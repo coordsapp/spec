@@ -22,3 +22,7 @@ System feature index:
 - [Feature 18 - OpenAPI Contracts](./feature-18-openapi-contracts.md)
 - [Feature 19 - Custom Domain Support](./feature-19-custom-domain-support.md)
 - [Feature 20 - SLA Monitoring and Public Status](./feature-20-sla-monitoring-status.md)
+- [Feature 21 - Warehouse Management API](./feature-21-warehouse-management.md)
+- [Feature 22 - Dock Management and Verification](./feature-22-dock-management-and-verification.md)
+- [Feature 23 - Carrier Access Tokens](./feature-23-carrier-access-tokens.md)
+- [Feature 24 - Live Dock Operations](./feature-24-live-dock-operations.md)
