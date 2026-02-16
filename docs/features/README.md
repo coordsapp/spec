@@ -31,3 +31,4 @@ System feature index:
 - [Feature 27 - Onboarding Insights Dashboard and Filtered Funnel API](./feature-27-onboarding-insights-dashboard-and-filtered-funnel-api.md)
 - [Feature 28 - Interactive Coordinate Converter](./feature-28-coordinate-converter.md)
 - [Feature 29 - Open Source Map Platform](./feature-29-open-source-map-platform.md)
+- [Feature 30 - Active Logistics Coordination Runtime](./feature-30-active-logistics-coordination-runtime.md)

@@ -9,6 +9,7 @@ Publishes machine-readable API contracts for resolver and ownership workflows.
 ## Contract files
 - `cloud/openapi/v1.yaml`
 - `cloud/openapi/v1-phase3.yaml`
+- `cloud/openapi/v1-phase9.yaml`
 
 ## Key behavior
 - Defines request/response schemas and status codes
@@ -18,4 +19,5 @@ Publishes machine-readable API contracts for resolver and ownership workflows.
 ## Current coverage note (as of February 16, 2026)
 - `cloud/openapi/v1.yaml` covers resolver/status endpoints
 - `cloud/openapi/v1-phase3.yaml` covers phase 3 alias ownership flows
-- Phase 5 warehouse/dock/carrier/operations endpoints are implemented in runtime and should be added in the next OpenAPI contract update
+- `cloud/openapi/v1-phase9.yaml` covers coordination/routing endpoints
+- Phase 5 warehouse/dock/carrier/operations endpoints are implemented in runtime and remain a follow-up OpenAPI coverage item

@@ -8,6 +8,7 @@ The map experience turns coords into a full spatial workflow surface where teams
 
 ## New public routes
 - `GET /map`
+- `GET /explore`
 - `GET /v1/map/resolve`
 
 ## Map viewport request
@@ -16,7 +17,7 @@ curl "https://coords.up.railway.app/v1/map/resolve?bbox=-97.2,32.5,-96.1,33.1&la
 ```
 
 ## Handle search flow
-1. Open `/map`
+1. Open `/map` (workspace) or `/explore` (classic)
 2. Enter a handle such as `@acme/warehouse-1/dock-2`
 3. Resolve it via `GET /v1/resolve/{handle}`
 4. Copy/share the generated URL state for teammates
@@ -26,16 +27,22 @@ curl "https://coords.up.railway.app/v1/map/resolve?bbox=-97.2,32.5,-96.1,33.1&la
 - `docks`: verified dock locations with warehouse context
 - `handles`: verified public aliases inside viewport
 
+## Basemap controls
+- Streets
+- Terrain
+- Satellite (with roads and labels overlays)
+
 ## URL state parameters
-- `lat`: map center latitude
-- `lng`: map center longitude
-- `z`: zoom level
+- `center`: map center as `lat,lng`
+- `zoom`: zoom level
 - `q`: active handle search query
 - `layers`: comma-separated layer list
+- `basemap`: `streets`, `satellite`, or `terrain`
 
 ## Where implemented
 - `cloud/internal/mapview/service.go`
 - `cloud/handlers/mapview/handler.go`
-- `cloud/handlers/web/handler.go`
+- `cloud/handlers/web/web_map_v2.go`
+- `cloud/handlers/web/web_map.go`
 - `cloud/cmd/resolver/main.go`
 - `cloud/openapi/v1.yaml`

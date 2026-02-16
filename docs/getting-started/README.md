@@ -18,3 +18,4 @@ New team member learning path (read in order):
 - [14 - Phase 6 Week 4 Funnel Optimization](./14-phase-6-week-4-funnel-optimization.md)
 - [15 - Phase 7 Interactive Coordinate Converter](./15-phase-7-coordinate-converter.md)
 - [16 - Phase 8 Open Source Map Platform](./16-phase-8-open-source-map-platform.md)
+- [17 - Phase 9 Active Logistics Coordination](./17-phase-9-active-logistics-coordination.md)

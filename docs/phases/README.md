@@ -10,3 +10,4 @@ Phase documentation index:
 - [Phase 6 - Landing Experience and Developer Onboarding](./phase-06.md) - `Completed`
 - [Phase 7 - Interactive Coordinate Converter](./phase-07.md) - `Completed`
 - [Phase 8 - Open Source Map Platform](./phase-08.md) - `Completed`
+- [Phase 9 - Active Logistics Coordination](./phase-09.md) - `In Progress`

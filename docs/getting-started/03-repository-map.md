@@ -20,8 +20,17 @@ Hosted API and platform services:
 - Billing, domains, SLA/status
 - Warehouse workflows (`/v1/warehouses/...`)
 - Dock verification and operations (`/v1/warehouses/{id}/operations/...`)
+- Map platform (`/map`, `/explore`, `/v1/map/resolve`)
+- Active coordination runtime (`/v1/routing/plan`, `/v1/coordination/...`)
 
 Key Phase 5 implementation paths:
 - `cloud/internal/warehouse/service.go`
 - `cloud/handlers/warehouses/`
 - `cloud/storage/schema_phase5_warehouse.sql`
+
+Key Phase 8 and Phase 9 implementation paths:
+- `cloud/handlers/web/web_map_v2.go`
+- `cloud/internal/mapview/service.go`
+- `cloud/internal/coordination/`
+- `cloud/handlers/coordination/`
+- `cloud/storage/schema_phase9_coordination.sql`
