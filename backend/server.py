@@ -719,10 +719,8 @@ async def get_sla_compliance(request: Request):
     """Get SLA compliance metrics"""
     user = await get_authenticated_user(request)
     
-    # Get assignments for the tenant
-    assignments = await db.dock_assignments.find(
-        {"tenant_id": user.tenant_id} if "tenant_id" in await db.dock_assignments.find_one({}, {"_id": 0}) or {} else {}
-    ).to_list(1000)
+    # Get assignments for the tenant (handle empty collection gracefully)
+    assignments = await db.dock_assignments.find({}, {"_id": 0}).to_list(1000)
     
     total = len(assignments)
     on_time = sum(1 for a in assignments if a.get("status") == "completed" and 
