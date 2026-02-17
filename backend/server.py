@@ -234,6 +234,7 @@ async def register(request: Request, response: Response):
         "updated_at": utc_now().isoformat()
     }
     await db.users.insert_one(user_doc)
+    user_doc.pop('_id', None)  # Remove MongoDB _id if added
     
     # Generate token and session
     session_token = generate_jwt(user_id, email, UserRole.OPERATOR.value, "default")
@@ -251,7 +252,7 @@ async def register(request: Request, response: Response):
     set_session_cookie(response, session_token)
     
     # Remove password_hash from response
-    del user_doc["password_hash"]
+    user_doc.pop("password_hash", None)
     
     return {"success": True, "user": user_doc, "token": session_token}
 
