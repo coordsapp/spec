@@ -311,8 +311,8 @@ async def create_dock(dock_data: DockCreate, request: Request):
     """Create a new dock"""
     user = await get_authenticated_user(request)
     
-    # Generate L1 string for the dock location
-    l1_raw = generate_l1_string(dock_data.lat, dock_data.lng)
+    # Generate L1 string for the dock location (spec-compliant with altitude)
+    l1_raw = generate_l1(dock_data.lat, dock_data.lng, 0.0)
     
     # Create location entry
     location_id = generate_id("loc_")
