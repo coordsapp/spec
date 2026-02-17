@@ -1,34 +1,63 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.App {
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+  background: rgba(10, 10, 10, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.leaflet-popup-content {
+  margin: 12px !important;
+  color: #fafafa !important;
 }
 
-.App-link {
-    color: #61dafb;
+.leaflet-popup-tip {
+  background: rgba(10, 10, 10, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.leaflet-popup-close-button {
+  color: #71717a !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #fafafa !important;
+}
+
+/* Custom Dock Icon */
+.custom-dock-icon,
+.custom-carrier-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Map container overrides */
+.leaflet-container {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.leaflet-bar {
+  border: 1px solid #27272a !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-bar a {
+  background: #0a0a0a !important;
+  color: #fafafa !important;
+  border-bottom-color: #27272a !important;
+}
+
+.leaflet-bar a:hover {
+  background: #1a1a1a !important;
+}
+
+/* Scrollbar in sidebar */
+[data-radix-scroll-area-viewport] {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a #0a0a0a;
 }
