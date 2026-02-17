@@ -350,7 +350,7 @@ async def create_dock(dock_data: DockCreate, request: Request):
     }
     await db.docks.insert_one(dock_doc)
     
-    del dock_doc["_id"] if "_id" in dock_doc else None
+    dock_doc.pop('_id', None)
     return dock_doc
 
 
@@ -443,7 +443,7 @@ async def assign_dock(request: Request):
         }}
     )
     
-    del assignment_doc["_id"] if "_id" in assignment_doc else None
+    assignment_doc.pop('_id', None)
     return assignment_doc
 
 
@@ -503,7 +503,7 @@ async def create_carrier(carrier_data: CarrierCreate, request: Request):
     }
     await db.carriers.insert_one(carrier_doc)
     
-    del carrier_doc["_id"] if "_id" in carrier_doc else None
+    carrier_doc.pop('_id', None)
     return carrier_doc
 
 
@@ -599,7 +599,7 @@ async def create_route_plan(plan_request: RoutePlanRequest, request: Request):
         }}
     )
     
-    del route_doc["_id"] if "_id" in route_doc else None
+    route_doc.pop('_id', None)
     return route_doc
 
 
@@ -810,7 +810,7 @@ async def send_arrival_alert(request: Request):
     }
     
     await db.notifications.insert_one(notification)
-    del notification["_id"] if "_id" in notification else None
+    notification.pop('_id', None)
     
     return {"success": True, "notification": notification}
 
@@ -863,7 +863,7 @@ async def create_location(request: Request):
     }
     await db.locations.insert_one(location_doc)
     
-    del location_doc["_id"] if "_id" in location_doc else None
+    location_doc.pop('_id', None)
     return location_doc
 
 
