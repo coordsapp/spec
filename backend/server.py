@@ -29,8 +29,9 @@ from auth import (
     SESSION_EXPIRY_DAYS
 )
 from protocol import (
-    generate_l1_string, parse_l1_string, generate_l2_handle,
-    parse_l2_handle, coords_to_words, generate_l1_checksum
+    generate_l1, parse_l1, generate_l2_handle,
+    parse_l2_handle, coords_to_words, generate_checksum,
+    build_canonical_payload, validate_test_vectors
 )
 
 ROOT_DIR = Path(__file__).parent
