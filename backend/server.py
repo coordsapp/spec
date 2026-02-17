@@ -609,8 +609,8 @@ async def create_route_plan(plan_request: RoutePlanRequest, request: Request):
 
 @api_router.post("/v1/protocol/validate", response_model=L1ValidationResponse)
 async def validate_l1(validation: L1ValidationRequest):
-    """Validate L1 spatial identifier"""
-    valid, data, error = parse_l1_string(validation.l1_string)
+    """Validate L1 spatial identifier per spec"""
+    valid, data, error = parse_l1(validation.l1_string)
     
     if not valid:
         return L1ValidationResponse(valid=False, error=error)
@@ -619,34 +619,53 @@ async def validate_l1(validation: L1ValidationRequest):
         valid=True,
         lat=data["lat"],
         lng=data["lng"],
-        altitude=data.get("altitude"),
+        altitude=data.get("alt"),
         checksum=data["checksum"],
         checksum_valid=data["checksum_valid"]
     )
 
 
 @api_router.post("/v1/protocol/generate")
-async def generate_l1(request: Request):
-    """Generate L1 string from coordinates"""
+async def generate_l1_endpoint(request: Request):
+    """Generate L1 string from coordinates (spec-compliant)"""
     body = await request.json()
     lat = body.get("lat")
     lng = body.get("lng")
-    altitude = body.get("altitude")
+    alt = body.get("alt", 0.0)  # Altitude required per spec, default 0
     
     if lat is None or lng is None:
         raise HTTPException(status_code=400, detail="lat and lng required")
     
-    l1_string = generate_l1_string(lat, lng, altitude)
-    checksum = generate_l1_checksum(lat, lng, altitude)
+    # Validate ranges
+    if not (-90 <= lat <= 90):
+        raise HTTPException(status_code=400, detail=f"Latitude {lat} out of range [-90, 90]")
+    if not (-180 <= lng <= 180):
+        raise HTTPException(status_code=400, detail=f"Longitude {lng} out of range [-180, 180]")
+    
+    l1_uri = generate_l1(lat, lng, alt)
+    checksum = generate_checksum(lat, lng, alt)
+    canonical = build_canonical_payload(lat, lng, alt)
     words = coords_to_words(lat, lng)
     
     return {
-        "l1": l1_string,
+        "l1": l1_uri,
         "checksum": checksum,
+        "canonical_payload": canonical,
         "lat": lat,
         "lng": lng,
-        "altitude": altitude,
+        "alt": alt,
         "words": words
+    }
+
+
+@api_router.get("/v1/protocol/test-vectors")
+async def get_test_vectors():
+    """Return spec test vector validation results"""
+    results = validate_test_vectors()
+    all_pass = all(r["checksum_pass"] and r["uri_pass"] for r in results)
+    return {
+        "spec_compliant": all_pass,
+        "vectors": results
     }
 
 
