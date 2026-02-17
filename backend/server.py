@@ -925,7 +925,7 @@ async def seed_demo_data():
                 DockStatus.MAINTENANCE, DockStatus.AVAILABLE, DockStatus.RESERVED]
     
     for i, dock in enumerate(demo_docks):
-        l1_raw = generate_l1_string(dock["lat"], dock["lng"])
+        l1_raw = generate_l1(dock["lat"], dock["lng"], 0.0)
         location_id = generate_id("loc_")
         
         # Create location
