@@ -1,0 +1,199 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Coords",
+      "persona": "E1 - The Anti-AI Designer",
+      "tone": "Tactical, Precision, High-Velocity, Command-Center",
+      "aesthetic": "Dark Mode Industrial Futurism",
+      "principles": [
+        "Fusion over Imitation: Mix Military HUD precision with Logistics utility.",
+        "Emotion First: The user feels like an Air Traffic Controller.",
+        "Content is King: The Map and Data are the heroes; UI gets out of the way.",
+        "Density over Whitespace: High-density information display (Control Tower vibe).",
+        "Actionable Signals: Color is used strictly for status/alerts, not decoration."
+      ]
+    },
+    "typography": {
+      "fonts": {
+        "headings": {
+          "family": "Barlow Condensed, sans-serif",
+          "weights": ["600", "700"],
+          "usage": "Page titles, widget headers, major metrics"
+        },
+        "body": {
+          "family": "Inter, sans-serif",
+          "weights": ["400", "500"],
+          "usage": "General UI text, descriptions"
+        },
+        "mono": {
+          "family": "JetBrains Mono, monospace",
+          "weights": ["400", "500"],
+          "usage": "Protocol Lab, IDs, Coordinates, Hash Validation, Timestamps"
+        }
+      },
+      "install_commands": [
+        "font-barlow-condensed",
+        "font-inter",
+        "font-jetbrains-mono"
+      ],
+      "styles": {
+        "h1": "font-heading text-4xl md:text-5xl font-bold tracking-tight uppercase",
+        "h2": "font-heading text-2xl md:text-3xl font-semibold tracking-tight uppercase text-muted-foreground/90",
+        "h3": "font-heading text-xl font-medium tracking-wide text-foreground",
+        "label": "font-mono text-xs uppercase tracking-widest text-muted-foreground",
+        "data": "font-mono text-sm font-medium text-foreground"
+      }
+    },
+    "colors": {
+      "theme": "dark",
+      "palette": {
+        "background": {
+          "default": "#050505",
+          "surface": "#0A0A0A",
+          "overlay": "#121212"
+        },
+        "border": {
+          "default": "#27272A",
+          "active": "#3F3F46",
+          "highlight": "#52525B"
+        },
+        "brand": {
+          "primary": "#3B82F6", 
+          "accent": "#00E676" 
+        },
+        "status": {
+          "success": "#10B981", 
+          "warning": "#F59E0B", 
+          "error": "#EF4444", 
+          "info": "#3B82F6", 
+          "neutral": "#71717A" 
+        },
+        "text": {
+          "primary": "#FAFAFA",
+          "secondary": "#A1A1AA",
+          "muted": "#52525B"
+        }
+      },
+      "rules": [
+        "NEVER use gradients for backgrounds. Use solid, deep blacks/grays.",
+        "Use 1px borders for separation instead of shadows.",
+        "Status colors (Red/Green/Amber) should be vivid and used for data points only."
+      ]
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-4 md:p-6 lg:p-8",
+        "component_gap": "gap-4"
+      },
+      "grid_systems": {
+        "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-min",
+        "map_workspace": "relative w-full h-[calc(100vh-4rem)] overflow-hidden",
+        "dock_grid": "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2"
+      },
+      "containers": {
+        "panel": "bg-background/95 backdrop-blur-md border border-border/50 rounded-sm shadow-2xl",
+        "card": "bg-card border border-border rounded-none" 
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "rounded-none bg-primary hover:bg-primary/90 text-primary-foreground font-mono uppercase tracking-wider text-xs px-4 py-2 transition-all active:scale-95",
+        "secondary": "rounded-none border border-border hover:bg-accent hover:text-accent-foreground font-mono uppercase tracking-wider text-xs px-4 py-2",
+        "ghost": "rounded-none hover:bg-accent hover:text-accent-foreground font-mono uppercase text-xs"
+      },
+      "inputs": {
+        "default": "rounded-none border-border bg-background font-mono text-sm focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-muted-foreground/50"
+      },
+      "cards": {
+        "style": "flat",
+        "border_radius": "rounded-none",
+        "features": ["1px border", "no shadow", "header uppercase mono"]
+      },
+      "map": {
+        "library": "react-leaflet",
+        "style": "CartoDB Dark Matter",
+        "container_style": "w-full h-full z-0",
+        "overlay_style": "absolute z-10 bg-black/80 backdrop-blur border border-white/10 p-4"
+      },
+      "charts": {
+        "library": "recharts",
+        "style": "minimalist",
+        "colors": ["#3B82F6", "#10B981", "#F59E0B", "#EF4444"]
+      }
+    },
+    "visual_enhancers": {
+      "borders": "border-r border-b border-white/5 (Grid Borders)",
+      "glassmorphism": "backdrop-blur-xl bg-black/60 border border-white/10 (For Map Overlays)",
+      "scanlines": "Optional: lightly overlaid linear-gradient for Protocol Lab",
+      "loading": "Skeleton loaders with a shimmering 'scan' effect"
+    },
+    "assets": {
+      "icons": {
+        "library": "lucide-react",
+        "style": "stroke-1.5",
+        "usage": "Use consistent stroke width. Tactical/Outline style."
+      },
+      "images": {
+        "landing_hero": {
+          "url": "https://images.unsplash.com/photo-1720759043544-4d43459f3388?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwbG9naXN0aWNzJTIwd2FyZWhvdXNlJTIwZGFyayUyMG1vZGV8ZW58MHx8fHwxNzcxMzQ4NzAwfDA&ixlib=rb-4.1.0&q=85",
+          "alt": "Dark futuristic warehouse logistics",
+          "placement": "Landing Page Hero Background (Darkened/Overlayed)"
+        },
+        "map_placeholder": {
+           "url": "https://images.unsplash.com/photo-1768280511074-3b3effe7a139?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbWFwJTIwZGF0YSUyMHZpc3VhbGl6YXRpb258ZW58MHx8fHwxNzcxMzQ4NzAxfDA&ixlib=rb-4.1.0&q=85",
+           "alt": "Abstract digital map data",
+           "placement": "Feature Cards / Empty States"
+        }
+      }
+    },
+    "page_strategies": {
+      "landing": {
+        "style": "Cinematic/Immersive",
+        "elements": [
+            "Hero: Full-screen dark image with 'Scanner' overlay.",
+            "Typography: Massive condensed headers.",
+            "CTA: 'Initialize Workspace' (Technical jargon).",
+            "Marquee: Scrolling carrier codes or protocol hashes."
+        ]
+      },
+      "map_workspace": {
+        "style": "Full Screen Application",
+        "elements": [
+            "Map: Base layer (Dark Matter).",
+            "Sidebar: Collapsible, semi-transparent glass.",
+            "Floaters: Status widgets (Weather, Traffic, Active Carriers)."
+        ]
+      },
+      "protocol_lab": {
+        "style": "Terminal/Code Editor",
+        "elements": [
+            "Font: JetBrains Mono everywhere.",
+            "Colors: Black background, green/amber text.",
+            "Input: Large text area with line numbers."
+        ]
+      },
+      "dock_management": {
+        "style": "Grid/Status Board",
+        "elements": [
+            "Visual Grid: Representation of physical docks.",
+            "Color Coding: Red (Occupied), Green (Open), Amber (Maintenance).",
+            "Metrics: Turnaround time, Occupancy rate."
+        ]
+      }
+    },
+    "accessibility": {
+      "contrast": "Ensure green/red status colors pass 4.5:1 against the dark background.",
+      "focus": "High-vis white border on focus states.",
+      "reduced_motion": "Disable map fly-to animations if requested."
+    },
+    "universal_guidelines": [
+      "Use 'sonner' for all toast notifications.",
+      "Implement `lenis` for smooth scrolling on the landing page.",
+      "Use `react-hook-form` + `zod` for all forms (Protocol validation).",
+      "Always use named exports for components.",
+      "DO NOT center align the app container.",
+      "Use `data-testid` on all interactive elements.",
+      "Dark Mode is the DEFAULT and PRIMARY experience."
+    ]
+  }
+}
