@@ -847,7 +847,7 @@ async def create_location(request: Request):
     if lat is None or lng is None:
         raise HTTPException(status_code=400, detail="lat and lng required")
     
-    l1_raw = generate_l1_string(lat, lng)
+    l1_raw = generate_l1(lat, lng, 0.0)
     
     location_doc = {
         "location_id": generate_id("loc_"),
