@@ -14,5 +14,6 @@ Phase documentation index:
 - [Phase 8 - Open Source Map Platform](./phase-08.md) - `Completed`
 - [Phase 9 - Active Logistics Coordination](./phase-09.md) - `In Progress`
 - [Phase 10 - Coords XREF System (CXS): Design and Discussion](./phase-10.md) - `Planning`
+- [Phase 11 - Protocol Hardening and Standard Readiness](./phase-11.md) - `Planned`
 
 See `docs/open-questions.md` for tracked issues and gaps found across these phases.
