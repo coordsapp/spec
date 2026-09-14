@@ -38,6 +38,33 @@ Enable end-to-end operational flow:
 - New coordination handlers and enterprise route wiring
 - Migrations updated to include Phase 9 schema
 
+## Quick Examples
+Route planning:
+```bash
+curl -X POST "https://coords.up.railway.app/v1/routing/plan" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "origin":"@carrier/fastfreight-truck-123",
+    "destination":"@acme/logistics-center/dock-1",
+    "stops":["@fuel/dallas-north"],
+    "vehicle_type":"truck"
+  }'
+```
+Dock assignment:
+```bash
+curl -X POST "https://coords.up.railway.app/v1/coordination/assign-dock" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "warehouse_id":"<warehouse-uuid>",
+    "carrier_name":"FastFreight",
+    "vehicle_type":"truck",
+    "planned_arrival_at":"2026-02-16T19:15:00Z"
+  }'
+```
+`/map` route planning panel calls `POST /v1/routing/plan` directly; `/explore` remains available as the lightweight classic map.
+
 ## Operational Notes
 - Service implementation:
 1. `cloud/internal/coordination/`

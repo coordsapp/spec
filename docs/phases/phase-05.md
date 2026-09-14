@@ -66,5 +66,10 @@ Enable end-to-end flow:
   - `@phase5-e2e-1771215200/dallas-north-dc/inbound-dock-1`
 - Operations state transition verified: `arrived` -> `departed`
 
+## Expected Outcomes
+- Carriers receive precise, verified arrival targets
+- Dispatch and dock teams share a common spatial source of truth
+- Resolver usage maps directly to live operational throughput
+
 ## Outcome Target
 Coords becomes a mission-critical logistics workflow platform, not just a resolver utility.

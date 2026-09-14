@@ -12,10 +12,5 @@ New team member learning path (read in order):
 - [08 - Billing and Tier Enforcement](./08-billing-and-tier-enforcement.md)
 - [09 - Custom Domains and SLA](./09-custom-domains-and-sla.md)
 - [10 - FAQ and Troubleshooting](./10-faq-and-troubleshooting.md)
-- [11 - Phase 5 Warehouse Workflow (Logistics)](./11-phase-5-warehouse-workflow.md)
-- [12 - Phase 6 Landing and Interactive Onboarding](./12-phase-6-landing-and-interactive-onboarding.md)
-- [13 - Phase 6 Week 3 Onboarding Analytics](./13-phase-6-week-3-onboarding-analytics.md)
-- [14 - Phase 6 Week 4 Funnel Optimization](./14-phase-6-week-4-funnel-optimization.md)
-- [15 - Phase 7 Interactive Coordinate Converter](./15-phase-7-coordinate-converter.md)
-- [16 - Phase 8 Open Source Map Platform](./16-phase-8-open-source-map-platform.md)
-- [17 - Phase 9 Active Logistics Coordination](./17-phase-9-active-logistics-coordination.md)
+
+Phase-specific implementation history and details have moved to `docs/phases/` (see `phase-05.md` through `phase-09.md`).

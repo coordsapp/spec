@@ -19,10 +19,11 @@ Enable end-to-end flow:
 2. `POST /v1/convert/batch`
 - Interactive converter UI at `GET /tools/converter`
 - Multi-format conversion outputs:
-1. Coords L1 URI
-2. suggested handles
-3. GeoJSON feature
-4. WKT point
+1. Coords L1 URI (`l1`)
+2. suggested handle (`suggested_handle`)
+3. suggested spot (`suggested_spot`)
+4. GeoJSON feature (`geojson`)
+5. WKT point (`wkt`)
 - Batch conversion from JSON list or CSV payload
 - Converter usage analytics via onboarding events
 
@@ -46,6 +47,26 @@ Enable end-to-end flow:
 - `GET /tools/converter`
 - `POST /v1/convert/coordinate`
 - `POST /v1/convert/batch`
+
+## Example Requests
+Single conversion:
+```bash
+curl -X POST "https://coords.up.railway.app/v1/convert/coordinate" \
+  -H "Content-Type: application/json" \
+  -d '{"lat":32.7767,"lng":-96.7970,"alt":185.5,"label":"dallas north dock"}'
+```
+Batch (CSV):
+```bash
+curl -X POST "https://coords.up.railway.app/v1/convert/batch" \
+  -H "Content-Type: application/json" \
+  -d '{"csv":"lat,lng,alt,label\n32.7767,-96.7970,185.5,dallas\n37.7749,-122.4194,10.2,sf"}'
+```
+Interactive flow via `/tools/converter`:
+1. Open `/tools/converter`
+2. Enter coordinates or click the map
+3. Copy generated L1/handle outputs
+4. Use snippets to integrate in app code
+5. Use batch converter for migration datasets
 
 ## Operational Notes
 - Converter backend is implemented in:

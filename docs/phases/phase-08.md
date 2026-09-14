@@ -50,6 +50,24 @@ Enable end-to-end flow:
 - Classic map experience preserved at `/explore` for backwards-compatible lightweight usage
 - OpenAPI contract updated for `/v1/map/resolve`
 
+## URL State Parameters
+- `center`: map center as `lat,lng`
+- `zoom`: zoom level
+- `q`: active handle search query
+- `layers`: comma-separated layer list
+- `basemap`: `streets`, `satellite`, or `terrain`
+
+## Example Request
+```bash
+curl "https://coords.up.railway.app/v1/map/resolve?bbox=-97.2,32.5,-96.1,33.1&layers=warehouses,docks,handles&limit=500"
+```
+
+Handle search flow:
+1. Open `/map` (workspace) or `/explore` (classic)
+2. Enter a handle such as `@acme/warehouse-1/dock-2`
+3. Resolve it via `GET /v1/resolve/{handle}`
+4. Copy/share the generated URL state for teammates
+
 ## Operational Notes
 - Backend implementation lives in:
 1. `cloud/internal/mapview/service.go`

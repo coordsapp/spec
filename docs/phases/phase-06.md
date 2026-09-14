@@ -58,6 +58,11 @@ Move visitors from discovery to first useful API usage in under 10 minutes.
 4. Go
 - Local state persistence for sandbox resources and tutorial progress (browser local storage)
 
+## Live Mode Details
+- Same explorer UI targets real endpoints as sandbox mode
+- A user-provided bearer token is required for protected routes
+- Request/response payloads are shown inline for debugging
+
 ## Week 3 Delivered
 - Add conversion instrumentation on:
 1. landing page CTA clicks
@@ -71,6 +76,16 @@ Move visitors from discovery to first useful API usage in under 10 minutes.
 - Add in-memory funnel summary for immediate monitoring of onboarding drop-off
 - Keep root/API compatibility fully unchanged for existing integrations
 
+## Weekly Monitoring Checklist
+Recommended weekly review using `GET /v1/onboarding/summary`:
+```bash
+curl "https://coords.up.railway.app/v1/onboarding/summary?limit=20"
+```
+1. `tutorial_completed` count and completion ratio vs `app_view`
+2. most common failing tutorial step (`by_step` + non-2xx outcomes)
+3. sandbox vs live usage mix (`by_mode`)
+4. landing CTA performance (`cta_get_started`, `cta_contact_sales`)
+
 ## Week 4 Delivered
 - Add filtered analytics query support (`since_minutes`, `mode`, `page`) for summary and funnel reads
 - Add dedicated funnel endpoint:
@@ -80,6 +95,18 @@ Move visitors from discovery to first useful API usage in under 10 minutes.
 2. summary payload visibility
 3. step conversion and drop-off visibility
 - Add refresh hooks after tutorial and explorer actions so optimization loops happen in-product
+
+## Funnel Optimization Loop
+Quick checks:
+```bash
+curl "https://coords.up.railway.app/v1/onboarding/summary?since_minutes=60&mode=sandbox&page=app"
+curl "https://coords.up.railway.app/v1/onboarding/funnel?since_minutes=60&mode=sandbox&page=app"
+```
+Practical loop:
+1. Filter to `mode=sandbox` and recent window (15-60 minutes)
+2. Identify step with highest `drop_off`
+3. Improve copy/API defaults for that step
+4. Re-check funnel after deploy for conversion movement
 
 ## Operational Notes
 - Week 2/3/4 web UX work is implemented in `cloud/handlers/web/handler.go`
