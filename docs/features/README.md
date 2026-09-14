@@ -32,3 +32,4 @@ System feature index:
 - [Feature 28 - Interactive Coordinate Converter](./feature-28-coordinate-converter.md)
 - [Feature 29 - Open Source Map Platform](./feature-29-open-source-map-platform.md)
 - [Feature 30 - Active Logistics Coordination Runtime](./feature-30-active-logistics-coordination-runtime.md)
+- [Feature 31 - Geodetic and Interoperability Standards Alignment](./feature-31-geodetic-and-interoperability-standards.md)
