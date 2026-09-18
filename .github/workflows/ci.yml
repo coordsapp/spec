@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate test-vectors.json is well-formed
+        run: python3 -c "import json; data = json.load(open('v1/test-vectors.json')); print(f'test-vectors.json OK ({len(data)} top-level entries)')"
+
+      - name: Check core protocol docs exist
+        run: |
+          for f in v1/geometry.md v1/checksum.md v1/altitude.md v1/boundaries.md v1/test-vectors.md v1/test-vectors.json; do
+            if [ ! -f "$f" ]; then
+              echo "Missing required protocol doc: $f"
+              exit 1
+            fi
+          done
+          echo "All required v1 protocol docs present"
