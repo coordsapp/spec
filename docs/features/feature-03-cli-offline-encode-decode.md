@@ -17,4 +17,4 @@ Provides an offline Go CLI for encoding coordinates into L1 URIs and decoding th
 
 ## Where implemented
 - `core/cmd/coords/main.go`
-- `core/internal/coords/codec.go`
+- `core/coords/codec.go` (moved out of `internal/` as part of the OQ-003 fix, 2026-09-18, so other modules — `cloud`, or external consumers like Landos/Landblock — can import it directly)

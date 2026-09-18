@@ -14,7 +14,9 @@ Checksum is generated from canonical payload fields and used for typo/corruption
 - Canonical numeric formatting for `lat`, `lng`, and `alt`
 - Checksum validation on decode
 - Rejects malformed URI payloads and checksum mismatches
+- Rejects non-finite values (`NaN`, `Infinity`) at the bounds-validation step, per `spec/v1/boundaries.md` (fixed 2026-09-18, tracked as OQ-001 — see `docs/open-questions.md`)
 
 ## Where implemented
-- `core/internal/coords/codec.go`
-- `core/internal/coords/codec_test.go`
+- `core/coords/codec.go`
+- `core/coords/codec_test.go`
+- `cloud/internal/resolver/l1.go` imports this package directly (as of the OQ-003 fix) rather than maintaining its own copy, so `cloud` gets the same validation automatically
