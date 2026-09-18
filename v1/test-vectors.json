@@ -45,6 +45,26 @@
     {
       "reason": "non-canonical precision",
       "uri": "coords:l1:v1:37.7749,-122.4194,15.2*beefbeef"
+    },
+    {
+      "reason": "NaN latitude (OQ-001)",
+      "uri": "coords:l1:v1:NaN,0.000000,0.00*00000000"
+    },
+    {
+      "reason": "positive infinity latitude (OQ-001)",
+      "uri": "coords:l1:v1:Inf,0.000000,0.00*00000000"
+    },
+    {
+      "reason": "negative infinity latitude (OQ-001)",
+      "uri": "coords:l1:v1:-Inf,0.000000,0.00*00000000"
+    },
+    {
+      "reason": "NaN longitude (OQ-001)",
+      "uri": "coords:l1:v1:0.000000,NaN,0.00*00000000"
+    },
+    {
+      "reason": "NaN altitude (OQ-001)",
+      "uri": "coords:l1:v1:0.000000,0.000000,NaN*00000000"
     }
   ]
 }

@@ -16,3 +16,9 @@
   - `coords:l1:v1:90.100000,0.000000,0.00*2ca9e8f2`
 - Non-canonical formatting (wrong precision):
   - `coords:l1:v1:37.7749,-122.4194,15.2*beefbeef`
+- Non-finite literals (NaN/Infinity) must be rejected, not treated as valid coordinates (OQ-001):
+  - `coords:l1:v1:NaN,0.000000,0.00*00000000`
+  - `coords:l1:v1:Inf,0.000000,0.00*00000000`
+  - `coords:l1:v1:-Inf,0.000000,0.00*00000000`
+  - `coords:l1:v1:0.000000,NaN,0.00*00000000`
+  - `coords:l1:v1:0.000000,0.000000,NaN*00000000`
